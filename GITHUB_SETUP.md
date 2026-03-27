@@ -208,7 +208,7 @@ Perfect for roles: CTI Analyst | Security Engineer | SOC Analyst | Threat Resear
 ```
 🔒 Built: Threat Intelligence Pipeline with Claude AI
 
-Just shipped a production-ready system that automates threat analysis—
+Just shipped a production-ready system that automates threat analysis-
 exactly the kind of work I want to do at [TARGET COMPANY].
 
 What it does:
@@ -234,7 +234,7 @@ Repo: [GitHub link]
 
 **"Walk me through your GitHub project."**
 
-> I built a threat intelligence pipeline that automates what CTI analysts do daily. It ingests multiple data sources—Sophos firewall logs, suspicious emails, SIEM alerts—extracts indicators of compromise (IOCs), correlates them across sources, and uses Claude AI to analyze patterns.
+> I built a threat intelligence pipeline that automates what CTI analysts do daily. It ingests multiple data sources-Sophos firewall logs, suspicious emails, SIEM alerts-extracts indicators of compromise (IOCs), correlates them across sources, and uses Claude AI to analyze patterns.
 
 > The system maps detected techniques to MITRE ATT&CK, scores incident risk (0-100), and generates structured intelligence reports in JSON and markdown. It's production-ready: handles real data, extensible for custom IOCs, and integrates with common tools.
 
@@ -255,7 +255,7 @@ Repo: [GitHub link]
 
 **"Why Claude specifically?"**
 
-> Claude handles unstructured security data better than traditional SIEM queries. It understands context—a malicious domain in an email, a blocked IP in a firewall log, and a suspicious process in a SIEM alert might all be the same attack. Claude correlates these semantically, not just on matching strings.
+> Claude handles unstructured security data better than traditional SIEM queries. It understands context-a malicious domain in an email, a blocked IP in a firewall log, and a suspicious process in a SIEM alert might all be the same attack. Claude correlates these semantically, not just on matching strings.
 
 ---
 

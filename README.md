@@ -17,7 +17,7 @@ This pipeline bridges **SOC operations** (what you do today) and **CTI roles** (
 ✅ **Security Thinking:** MITRE ATT&CK, risk scoring, threat modeling  
 
 **For Interview Conversations:**
-- "I built a tool that correlates IOCs across multiple sources—firewall, email, SIEM—and generates threat intelligence reports with MITRE ATT&CK mapping."
+- "I built a tool that correlates IOCs across multiple sources-firewall, email, SIEM-and generates threat intelligence reports with MITRE ATT&CK mapping."
 - Shows you can handle unstructured security data and turn it into actionable intelligence.
 - Perfect for CTI, Security Engineering, and advanced SOC roles.
 
@@ -392,13 +392,13 @@ ANTHROPIC_API_KEY=sk-ant-...
 ## 💡 Interview Talking Points
 
 **"What made you build this?"**
-> I wanted to bridge the gap between SOC operations (where I am now) and CTI roles (where I want to go). This pipeline automates the tedious parts of threat analysis so analysts can focus on intelligence—profiling actors, predicting attacks, and building organizational resilience.
+> I wanted to bridge the gap between SOC operations (where I am now) and CTI roles (where I want to go). This pipeline automates the tedious parts of threat analysis so analysts can focus on intelligence-profiling actors, predicting attacks, and building organizational resilience.
 
 **"How does it work?"**
-> It ingests multiple data sources—firewall logs, email headers, SIEM alerts—extracts IOCs (IPs, domains, hashes), correlates them across sources, and uses Claude AI to analyze patterns and map them to MITRE ATT&CK. Outputs a structured incident report with threat actor profile and risk score.
+> It ingests multiple data sources-firewall logs, email headers, SIEM alerts-extracts IOCs (IPs, domains, hashes), correlates them across sources, and uses Claude AI to analyze patterns and map them to MITRE ATT&CK. Outputs a structured incident report with threat actor profile and risk score.
 
 **"What's the security value?"**
-> Reduces mean time to detect (MTTD) by automating correlation. A human analyst might take 2 hours to correlate IOCs across 3 systems; this does it in minutes. Also catches patterns humans might miss—same IP appearing in firewall, email, and SIEM = much higher confidence.
+> Reduces mean time to detect (MTTD) by automating correlation. A human analyst might take 2 hours to correlate IOCs across 3 systems; this does it in minutes. Also catches patterns humans might miss-same IP appearing in firewall, email, and SIEM = much higher confidence.
 
 **"How would you use it in a real CTI team?"**
 > Feed it daily alerts, aggregate reports by week, track threat actor campaigns over time, build threat intelligence feeds, and share IOCs with other organizations.

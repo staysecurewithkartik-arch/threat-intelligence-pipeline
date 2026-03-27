@@ -3,19 +3,19 @@
 ## 📥 You Just Downloaded:
 
 **Core Project:**
-- `threat_intel_pipeline.py` — Main production script (uses Claude API)
-- `threat_intel_pipeline_demo.py` — Demo version (no API needed, shows output)
-- `requirements.txt` — Python dependencies
-- `README.md` — Full documentation
-- `GITHUB_SETUP.md` — GitHub deployment guide
+- `threat_intel_pipeline.py` - Main production script (uses Claude API)
+- `threat_intel_pipeline_demo.py` - Demo version (no API needed, shows output)
+- `requirements.txt` - Python dependencies
+- `README.md` - Full documentation
+- `GITHUB_SETUP.md` - GitHub deployment guide
 
 **Sample Data (for testing):**
-- `sample_firewall_logs.txt` — Sophos firewall example
-- `sample_email_headers.txt` — Phishing/spoofing examples
-- `sample_siem_alerts.txt` — Real incident example
+- `sample_firewall_logs.txt` - Sophos firewall example
+- `sample_email_headers.txt` - Phishing/spoofing examples
+- `sample_siem_alerts.txt` - Real incident example
 
 **Generated Example Output:**
-- `INC-20260323072520_report.md` — Example threat intelligence report (THIS is what your reports will look like)
+- `INC-20260323072520_report.md` - Example threat intelligence report (THIS is what your reports will look like)
 
 ---
 
@@ -169,7 +169,7 @@ When applying to CTI roles, you can say:
 
 > "I built a threat intelligence pipeline that ingests firewall logs, email headers, and SIEM alerts, then uses Claude AI to automatically correlate indicators of compromise across sources, map them to MITRE ATT&CK, and generate structured intelligence reports.
 > 
-> It demonstrates my understanding of: threat intelligence workflows, IOC correlation, attack chain analysis, risk assessment, and automation—exactly what CTI teams do."
+> It demonstrates my understanding of: threat intelligence workflows, IOC correlation, attack chain analysis, risk assessment, and automation-exactly what CTI teams do."
 
 ---
 

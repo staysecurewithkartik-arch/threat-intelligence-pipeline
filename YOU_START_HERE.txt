@@ -285,14 +285,14 @@ When asked: "Tell me about a project you've built"
 "I built a threat intelligence pipeline that ingests firewall logs, email headers, and SIEM alerts, then uses Claude AI to extract IOCs, correlate them across sources, and generate risk-scored threat intelligence reports with MITRE ATT&CK mapping. It bridges my SOC experience with CTI skills."
 
 2-MINUTE VERSION:
-"In my SOC role, I analyze individual security alerts—firewall blocks, suspicious emails, SIEM detections. But the real intelligence work is connecting the dots: finding the same threat actor across multiple data sources.
+"In my SOC role, I analyze individual security alerts-firewall blocks, suspicious emails, SIEM detections. But the real intelligence work is connecting the dots: finding the same threat actor across multiple data sources.
 
 I built a system that automates that. It ingests three types of data:
 1. Firewall logs (what we're blocking)
 2. Email headers (where attacks come from)
 3. SIEM alerts (what happened inside the network)
 
-The system extracts indicators—IPs, domains, hashes—and correlates them across sources. If the same IP appears in a firewall block AND an email header AND a SIEM alert, that's high confidence that it's a real threat.
+The system extracts indicators-IPs, domains, hashes-and correlates them across sources. If the same IP appears in a firewall block AND an email header AND a SIEM alert, that's high confidence that it's a real threat.
 
 I use Claude AI to analyze these patterns intelligently, map them to MITRE ATT&CK techniques to understand attacker tactics, score the risk on a 0-100 scale, and generate structured threat intelligence reports.
 
@@ -305,7 +305,7 @@ What this demonstrates:
 FOLLOW-UP QUESTIONS YOU'LL GET:
 
 Q: "Why Claude and not ChatGPT?"
-A: "Claude handles unstructured security data better. It's good at analyzing context across multiple sources—a single IP in different contexts (C2 server vs just a blocked IP) means different things, and Claude understands that nuance."
+A: "Claude handles unstructured security data better. It's good at analyzing context across multiple sources-a single IP in different contexts (C2 server vs just a blocked IP) means different things, and Claude understands that nuance."
 
 Q: "How would you extend this?"
 A: "Real-time integration with threat feeds (VirusTotal, AlienVault OTX), actor tracking over time, web dashboard for visualization, Slack alerts for high-risk incidents, and eventually integration with our SIEM for automated investigation kickoff."

@@ -100,7 +100,7 @@ STEP 6: Create GitHub Repository (Online)
 │  └─ Click "Create repository"
 │
 ├─ You'll see this on the next page:
-│  "Quick setup — if you've done this kind of thing before"
+│  "Quick setup - if you've done this kind of thing before"
 │
 └─ DONE - Empty repo created
 

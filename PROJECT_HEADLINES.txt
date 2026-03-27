@@ -115,7 +115,7 @@ FOR LINKEDIN POST HEADLINE:
   └─ "Building My Path from SOC to CTI"
 
 FOR JOB APPLICATION:
-  └─ "I've built a Threat Intelligence Pipeline (GitHub: [link]) that demonstrates my understanding of threat correlation, IOC analysis, and MITRE ATT&CK mapping—core CTI skills."
+  └─ "I've built a Threat Intelligence Pipeline (GitHub: [link]) that demonstrates my understanding of threat correlation, IOC analysis, and MITRE ATT&CK mapping-core CTI skills."
 
 FOR INTERVIEW CONVERSATION OPENER:
   └─ "I built a threat intelligence pipeline that automates threat analysis..."

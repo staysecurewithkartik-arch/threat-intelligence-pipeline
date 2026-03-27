@@ -260,7 +260,7 @@ Step 5.2: Write LinkedIn Post (Optional But Powerful)
 ├─ Example post:
 │   "🔒 Built: Threat Intelligence Pipeline with Claude AI
 │
-│   Just shipped a production-ready system that automates threat analysis—
+│   Just shipped a production-ready system that automates threat analysis-
 │   exactly the kind of work I want to do in a CTI role.
 │
 │   What it does:
@@ -280,7 +280,7 @@ Step 5.2: Write LinkedIn Post (Optional But Powerful)
 
 Step 5.3: Reference in Job Applications
 ├─ In applications/cover letters:
-│   "I've built a Threat Intelligence Pipeline (GitHub: [link]) that demonstrates my understanding of threat correlation, IOC analysis, and MITRE ATT&CK mapping—skills critical for CTI roles."
+│   "I've built a Threat Intelligence Pipeline (GitHub: [link]) that demonstrates my understanding of threat correlation, IOC analysis, and MITRE ATT&CK mapping-skills critical for CTI roles."
 ├─ Include in resume:
 │   Projects Section:
 │   - Threat Intelligence Pipeline
@@ -291,10 +291,10 @@ Step 5.3: Reference in Job Applications
 
 Step 5.4: Practice Interview Explanation
 ├─ Memorize this (30 seconds):
-│   "I built a system that ingests multiple data sources—firewall logs, email headers, SIEM alerts—and uses Claude AI to correlate indicators of compromise across sources. It extracts IOCs, maps them to MITRE ATT&CK techniques, scores risk, and generates structured threat intelligence reports. This bridges my SOC experience with CTI skills—correlating signals to find who's attacking."
+│   "I built a system that ingests multiple data sources-firewall logs, email headers, SIEM alerts-and uses Claude AI to correlate indicators of compromise across sources. It extracts IOCs, maps them to MITRE ATT&CK techniques, scores risk, and generates structured threat intelligence reports. This bridges my SOC experience with CTI skills-correlating signals to find who's attacking."
 │
 ├─ Extended version (2 minutes):
-│   "In my SOC role, I analyze individual alerts all day. But the real intelligence work is connecting the dots—finding the same threat actor across multiple data sources. This pipeline automates that.
+│   "In my SOC role, I analyze individual alerts all day. But the real intelligence work is connecting the dots-finding the same threat actor across multiple data sources. This pipeline automates that.
 │
 │   It takes:
 │   1. Firewall blocks (what we're detecting)
