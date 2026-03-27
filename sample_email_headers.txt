@@ -1,0 +1,184 @@
+SUSPICIOUS EMAIL HEADERS - PHISHING DETECTION
+
+=== EMAIL 1: CEO FRAUD / BUSINESS EMAIL COMPROMISE ===
+
+From: ceo@companny-solutions.com
+To: finance@realcompany.net
+Cc: accounting@realcompany.net
+Subject: URGENT: Wire Transfer Required - Executive Directive
+Date: Wed, 20 Mar 2024 14:22:00 +0000
+Message-ID: <CAFg4s+K5Z9vQ1nM2pQ5r@mail.google.com>
+
+Authentication-Results: 
+  SPF: FAIL (192.168.1.45 is not authorized for companny-solutions.com)
+  DKIM: FAIL (signature validation failed)
+  DMARC: FAIL (both SPF and DKIM failed)
+
+Return-Path: <bounces@suspicious-mail.ru>
+X-Originating-IP: [203.45.67.89]
+X-Mailer: Libsodium/5.2.3
+X-Priority: 1 (Highest)
+Importance: high
+
+Received: from mail.suspicious-mail.ru (mail.suspicious-mail.ru [203.45.67.89])
+    by mta7.google.com with ESMTP id n1-20240320t142200z003a1f1e1d1c1b1a
+    (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256/256);
+    Wed, 20 Mar 2024 14:22:00 +0000
+
+X-Google-DKIM-Signature: Spoofed
+
+Content-Type: text/html; charset=UTF-8
+
+Email Body Extract:
+---
+Dear Finance Team,
+
+Due to urgent business requirements, I need you to process an immediate wire transfer:
+
+Bank Details:
+Account: 4521-987654-321
+Routing: 987654321
+Amount: USD $450,000
+Destination: Wire Transfer International Corp
+
+Please use the following link to verify and process: http://office365-verify-real.ru/login.php
+
+This is time-sensitive. Confirm completion within 1 hour.
+
+Best regards,
+[CEO Name]
+---
+
+Embedded Links:
+- http://office365-verify-real.ru/login.php
+- http://credential-harvest-farm.su/office365?ref=banking
+- https://malicious-c2.ru/admin/listener
+
+Attachments:
+- invoice_payment_form.exe (MD5: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6)
+- wire_transfer_instructions.doc (SHA256: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2)
+
+---
+
+=== EMAIL 2: MALWARE DISTRIBUTION / TROJAN ===
+
+From: support@upstrack.com
+To: employee@realcompany.com
+Subject: Package Delivery Notification - Tracking Update
+Date: Wed, 20 Mar 2024 14:35:12 +0000
+
+Authentication-Results:
+  SPF: FAIL (mail.malicious-hosting.ru not authorized)
+  DKIM: FAIL
+  DMARC: FAIL
+
+Return-Path: <noreply@mail.malicious-hosting.ru>
+X-Originating-IP: [210.12.34.56]
+X-Mailer: PHP Mailer 6.0.1
+
+Received: from mail.malicious-hosting.ru [210.12.34.56]
+    by company-mail.smtp with TLS
+
+Content-Type: text/html; charset=UTF-8
+
+Email Body:
+---
+Your UPS package requires immediate action:
+
+Track your package: http://ups-tracking-updates.ru/track?id=1Z999AA10123456784
+
+Click below to confirm delivery:
+[CONFIRM DELIVERY BUTTON]
+
+This is a time-sensitive notification. Click within 24 hours.
+
+Regards,
+UPS Customer Service
+---
+
+Embedded Links:
+- http://ups-tracking-updates.ru/track?id=1Z999AA10123456784
+- http://malware-distribution.su/payload.exe
+- http://rat-c2.ru:8080/checkin
+
+Attachments:
+- PackageNotification.zip (SHA1: b1d2e3f4a5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e)
+- tracking_details.scr (Known RemoteAccessTrojan variant)
+
+---
+
+=== EMAIL 3: CREDENTIAL HARVESTING / PHISHING LITE ===
+
+From: noreply@office365.onmicrosoft.ru
+To: user@realcompany.com
+Subject: ACTION REQUIRED: Verify Your Identity for Security Update
+Date: Wed, 20 Mar 2024 15:02:33 +0000
+
+Authentication-Results:
+  SPF: FAIL
+  DKIM: FAIL
+  DMARC: FAIL (Flagged as spoofed)
+
+X-Originating-IP: [104.21.45.67]
+
+Email Body:
+---
+We detected suspicious activity on your Office 365 account.
+
+VERIFY NOW: http://office365-security-verify.com/auth/login?session=a1b2c3d4e5f6
+
+Your session will expire in 1 hour. Re-verify your credentials to maintain access.
+
+Click here to verify your identity
+---
+
+Embedded Links:
+- http://office365-security-verify.com/auth/login?session=a1b2c3d4e5f6 (Credential harvesting page)
+- http://exfil-server.su/collect?id=office365_creds
+
+Tracking Pixel:
+- <img src="http://tracker.malicious-c2.ru/pixel.gif?id=user@realcompany.com&opened=1">
+
+---
+
+=== SUMMARY ===
+
+Total Suspicious Emails: 3
+Critical Threats: 2 (CEO Fraud + Malware)
+High Threats: 1 (Credential Harvesting)
+
+Unique Malicious Domains: 
+- suspicious-mail.ru
+- malicious-c2.ru
+- office365-verify-real.ru
+- credential-harvest-farm.su
+- malicious-hosting.ru
+- ups-tracking-updates.ru
+- rat-c2.ru
+- office365-security-verify.com
+- exfil-server.su
+- tracker.malicious-c2.ru
+
+Unique Malicious IPs:
+- 203.45.67.89 (APT28 infrastructure)
+- 210.12.34.56 (Trojan distribution)
+- 104.21.45.67 (Credential harvesting)
+
+Attack Types:
+1. Business Email Compromise (BEC) / CEO Fraud
+2. Malware Distribution (Trojan/RAT)
+3. Credential Harvesting / Office 365 Phishing
+
+Common Indicators:
+- Authentication failures (SPF/DKIM/DMARC)
+- Time urgency ("1 hour", "24 hours")
+- Spoofed legitimate services (Office 365, UPS, Bank)
+- Known malicious infrastructure (APT28, RAT C2)
+- Suspicious file types (.exe, .scr, .zip with known malware)
+
+Recommended Actions:
+1. Flag all users who clicked links
+2. Reset credentials for affected accounts
+3. Block malicious domains/IPs at perimeter
+4. Perform forensic analysis on affected workstations
+5. Check for lateral movement attempts

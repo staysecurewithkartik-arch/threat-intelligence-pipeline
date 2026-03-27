@@ -1,0 +1,293 @@
+================================================================================
+THREAT INTELLIGENCE PIPELINE - PROJECT HEADLINES
+================================================================================
+
+Use these headlines on GitHub, LinkedIn, resume, and in conversations.
+Pick the one that resonates most with you.
+
+================================================================================
+SHORT HEADLINES (For GitHub Repository Title/Description)
+================================================================================
+
+1. "AI-Powered Threat Intelligence Automation with Claude"
+   └─ Best for: GitHub repo description
+   └─ Why: Clear, concise, shows Claude+AI
+
+2. "Threat Intelligence Pipeline: IOC Correlation & Risk Scoring"
+   └─ Best for: GitHub README
+   └─ Why: Technical, specific to CTI
+
+3. "Multi-Source Security Intelligence Fusion with Claude AI"
+   └─ Best for: GitHub description/LinkedIn
+   └─ Why: Shows data orchestration + AI
+
+4. "Automated Threat Analysis: Firewall, Email & SIEM Correlation"
+   └─ Best for: GitHub title
+   └─ Why: Lists data sources (what you ingest)
+
+5. "CTI Automation: From SOC Alerts to Threat Intelligence"
+   └─ Best for: LinkedIn/interviews
+   └─ Why: Shows SOC→CTI transition
+
+================================================================================
+MEDIUM HEADLINES (For LinkedIn Profile / Resume)
+================================================================================
+
+6. "Threat Intelligence Pipeline: Correlating IOCs Across Security Data Sources"
+   └─ Best for: LinkedIn "Featured" section
+   └─ Why: Shows sophistication, mentions key CTI concept (IOC correlation)
+
+7. "AI-Powered Threat Intelligence Automation System"
+   └─ Best for: Resume "Projects" section
+   └─ Why: Short, impressive, shows AI integration
+
+8. "Intelligent Threat Analysis Engine for Multi-Source Security Data"
+   └─ Best for: LinkedIn headline
+   └─ Why: Sounds sophisticated, shows data orchestration
+
+9. "Built a Threat Intelligence Pipeline to Automate SOC-to-CTI Workflows"
+   └─ Best for: LinkedIn post
+   └─ Why: Shows your career transition thinking
+
+10. "Security Intelligence Automation: Bridging SOC Operations and CTI Analysis"
+    └─ Best for: Resume or LinkedIn
+    └─ Why: Clear narrative arc (SOC→CTI)
+
+================================================================================
+LONG HEADLINES (For Job Applications / Cover Letters)
+================================================================================
+
+11. "Threat Intelligence Pipeline with Claude AI: Multi-Source IOC Correlation and Risk Scoring"
+    └─ Best for: Cover letter or detailed LinkedIn post
+    └─ Why: Complete description in one line
+
+12. "End-to-End Threat Intelligence Automation: Firewall, Email & SIEM Analysis with AI-Powered Correlation"
+    └─ Best for: Email to recruiters
+    └─ Why: Shows full scope
+
+13. "Automated Threat Intelligence System: IOC Extraction, Correlation, MITRE ATT&CK Mapping, and Risk Assessment"
+    └─ Best for: Detailed job application
+    └─ Why: Lists all components
+
+14. "Production-Ready Threat Intelligence Platform: Correlating Security Signals Across Firewall, Email, and SIEM Using Claude AI"
+    └─ Best for: Security engineering roles
+    └─ Why: Emphasizes "production-ready"
+
+15. "Intelligent Threat Analysis Pipeline Bridging SOC Operations and Cyber Threat Intelligence"
+    └─ Best for: CTI-specific roles
+    └─ Why: Shows you understand both domains
+
+================================================================================
+BY USE CASE
+================================================================================
+
+FOR GITHUB REPO NAME:
+  └─ threat-intelligence-pipeline
+  └─ Or: threat-intel-automation
+  └─ Or: soc-to-cti-pipeline
+
+FOR GITHUB REPO DESCRIPTION (160 chars):
+  └─ "AI-powered threat intelligence automation. Ingests firewall logs, email headers, SIEM alerts → correlates IOCs → generates risk-scored incident reports with MITRE ATT&CK mapping."
+
+FOR GITHUB README H1:
+  └─ "Threat Intelligence Pipeline with Claude AI"
+  └─ Or: "Intelligent Threat Analysis Platform"
+
+FOR LINKEDIN PROJECT TITLE:
+  └─ "Threat Intelligence Pipeline with Claude AI"
+  └─ "Automated Threat Intelligence System"
+  └─ "CTI Automation for Security Operations"
+
+FOR LINKEDIN PROJECT DESCRIPTION:
+  └─ "AI-powered threat intelligence system that ingests firewall logs, email headers, and SIEM alerts. Uses Claude AI to extract IOCs, correlate across sources, map to MITRE ATT&CK, and generate structured threat intelligence reports. Built to demonstrate CTI workflows and bridge SOC operations to threat intelligence analysis."
+
+FOR RESUME PROJECT SECTION:
+  └─ "Threat Intelligence Pipeline with Claude AI"
+     • Automated multi-source IOC correlation and threat analysis
+     • Claude API for intelligent pattern recognition
+     • MITRE ATT&CK framework mapping
+     • Risk scoring (0-100) and incident timeline generation
+     • GitHub: [link]
+
+FOR LINKEDIN POST HEADLINE:
+  └─ "Just Built: Threat Intelligence Pipeline with Claude AI"
+  └─ "Shipped: Automated CTI Analysis System"
+  └─ "Building My Path from SOC to CTI"
+
+FOR JOB APPLICATION:
+  └─ "I've built a Threat Intelligence Pipeline (GitHub: [link]) that demonstrates my understanding of threat correlation, IOC analysis, and MITRE ATT&CK mapping—core CTI skills."
+
+FOR INTERVIEW CONVERSATION OPENER:
+  └─ "I built a threat intelligence pipeline that automates threat analysis..."
+  └─ "I created a system that correlates security alerts across multiple sources..."
+  └─ "My most recent project is a CTI automation system..."
+
+================================================================================
+RECOMMENDED COMBINATIONS
+================================================================================
+
+GITHUB + LINKEDIN CONSISTENCY:
+
+GitHub Repo:
+  Name: threat-intelligence-pipeline
+  Description: "AI-powered threat intelligence automation with Claude. Ingests firewall logs, email headers, SIEM alerts → correlates IOCs → generates risk-scored incident reports with MITRE ATT&CK mapping."
+
+LinkedIn Project:
+  Title: "Threat Intelligence Pipeline with Claude AI"
+  Description: [Full description from above]
+
+Resume:
+  "Threat Intelligence Pipeline | Automated CTI Analysis System"
+  - Key bullet points
+
+This way, everything matches. Recruiters see consistency. You have one clear story.
+
+================================================================================
+WHICH HEADLINE TO PICK (DECISION GUIDE)
+================================================================================
+
+Choose by YOUR audience:
+
+IF YOU'RE APPLYING TO CTI ROLES:
+  └─ Headline #5: "CTI Automation: From SOC Alerts to Threat Intelligence"
+  └─ Why: Shows your transition narrative. CTI roles love this.
+
+IF YOU'RE APPLYING TO SECURITY ENGINEER ROLES:
+  └─ Headline #1: "AI-Powered Threat Intelligence Automation with Claude"
+  └─ Why: Shows you can build production systems. Engineers love this.
+
+IF YOU'RE APPLYING TO SOC + CTI ROLES (GENERAL):
+  └─ Headline #2: "Threat Intelligence Pipeline: IOC Correlation & Risk Scoring"
+  └─ Why: Technical, broad appeal, shows sophistication.
+
+IF YOU'RE POSTING ON LINKEDIN (SOCIAL):
+  └─ Headline #9: "Built a Threat Intelligence Pipeline to Automate SOC-to-CTI Workflows"
+  └─ Why: Shows thinking + action. Personal narrative resonates.
+
+IF YOU'RE UPDATING GITHUB (PROFESSIONAL):
+  └─ Headline #3: "Multi-Source Security Intelligence Fusion with Claude AI"
+  └─ Why: Shows orchestration, AI, professionalism.
+
+================================================================================
+THE POWER OF YOUR HEADLINE
+================================================================================
+
+A recruiter's eye catches your headline in:
+├─ GitHub search results
+├─ LinkedIn profile
+├─ Resume PDF
+├─ Job application
+└─ Your conversation
+
+In 5 seconds, they read your headline and decide: "Interesting?" or "Next?"
+
+Make it count.
+
+Your headline should say:
+✓ What you built (Threat Intelligence Pipeline)
+✓ Why it matters (IOC correlation, risk scoring)
+✓ What makes it special (Claude AI, multi-source)
+
+All three in 10-15 words.
+
+================================================================================
+MY RECOMMENDATION (BEST HEADLINE)
+================================================================================
+
+Use this across GitHub, LinkedIn, Resume:
+
+  "Threat Intelligence Pipeline with Claude AI"
+
+Why?
+✓ Clear (everyone understands what it is)
+✓ Specific (mentions Claude AI = differentiator)
+✓ Professional (not buzzwordy, not generic)
+✓ Memorable (distinct from other projects)
+✓ Easy to find (searchable for "threat intelligence")
+✓ Works everywhere (GitHub, LinkedIn, resume, interviews)
+
+Then in descriptions, add detail:
+"AI-powered threat intelligence automation. Ingests firewall logs, email headers, SIEM alerts → extracts IOCs → correlates across sources → generates risk-scored incident reports with MITRE ATT&CK mapping."
+
+This headline + description combo tells the whole story in 20 seconds.
+
+================================================================================
+HOW TO USE THESE HEADLINES
+================================================================================
+
+STEP 1: Pick your headline from above (or combine ideas)
+
+STEP 2: Use it EVERYWHERE consistently:
+  ├─ GitHub repo title
+  ├─ GitHub README.md H1
+  ├─ LinkedIn project title
+  ├─ Resume project section
+  ├─ Job application
+  └─ Interview introduction
+
+STEP 3: Back it up with description:
+  └─ 2-3 sentence summary of what it does
+  └─ 3-5 key features
+  └─ GitHub link
+
+STEP 4: Tell the story in interviews:
+  └─ 30-second explanation
+  └─ 2-minute deep dive
+  └─ Answer follow-up questions
+
+CONSISTENCY = MEMORABILITY = SUCCESS
+
+================================================================================
+EXAMPLE: PUTTING IT ALL TOGETHER
+================================================================================
+
+GITHUB:
+  Repo Name: threat-intelligence-pipeline
+  Description: "AI-powered threat intelligence automation with Claude. Multi-source IOC correlation, risk scoring, MITRE ATT&CK mapping."
+
+LINKEDIN:
+  Project Title: "Threat Intelligence Pipeline with Claude AI"
+  Description: "Built an AI-powered system that ingests firewall logs, email headers, and SIEM alerts to correlate indicators of compromise across sources. Uses Claude AI for intelligent threat analysis, MITRE ATT&CK mapping, and risk-scored incident reporting. Demonstrates CTI workflows and bridges SOC operations to threat intelligence."
+
+RESUME:
+  "Threat Intelligence Pipeline with Claude AI | Automated CTI Analysis"
+  • Multi-source IOC extraction and correlation
+  • Claude AI for intelligent threat pattern analysis
+  • MITRE ATT&CK framework mapping
+  • Risk scoring and automated incident reporting
+  • GitHub: github.com/kartiksawant31/threat-intelligence-pipeline
+
+INTERVIEW:
+  "I built a Threat Intelligence Pipeline that automates what CTI teams do daily. It ingests firewall logs, email headers, and SIEM alerts, extracts indicators of compromise, correlates them across sources, and generates intelligence reports with MITRE ATT&CK mapping and risk scores."
+
+See how they all connect? Same story, different format. Consistency wins.
+
+================================================================================
+FINAL CHECKLIST
+================================================================================
+
+□ Pick your headline (or use my recommendation)
+□ Add 2-3 sentence description
+□ Use same headline on GitHub + LinkedIn + Resume
+□ Practice saying it in 30 seconds
+□ Practice saying it in 2 minutes
+□ Test on recruiter: "Does this headline make you want to learn more?"
+□ Go with it!
+
+================================================================================
+YOU'RE READY
+================================================================================
+
+You now have:
+✓ A working threat intelligence system
+✓ Complete documentation
+✓ 15+ headline options
+✓ A clear deployment path
+
+Next step: Pick your headline, then follow the deployment guide.
+
+Your headline = Your calling card.
+
+Make it good.
+
+================================================================================

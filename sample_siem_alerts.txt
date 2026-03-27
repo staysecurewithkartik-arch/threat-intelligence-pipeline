@@ -1,0 +1,257 @@
+SIEM ALERT LOG - SECURITY INCIDENT CLUSTER
+Alert Collection Date: 2024-03-20
+SIEM Platform: Splunk Enterprise
+Alert Severity: CRITICAL (Multiple High-Impact Events)
+
+=== ALERT 1: SUSPICIOUS LOGIN FROM EXTERNAL IP ===
+Alert ID: SIEM-20240320-001
+Timestamp: 2024-03-20 14:32:45 UTC
+Severity: HIGH
+Source: 203.45.67.89
+Destination: 192.168.15.45 (IT Department - Admin Workstation)
+Event Type: Successful Authentication
+User Account: admin_backup
+Authentication Method: RDP (Remote Desktop Protocol)
+Location: Russia (GEOIP lookup)
+Anomaly: First login from this IP, login outside working hours (14:32 = 8:32 PM IST)
+Risk Score: 85/100
+
+---
+
+=== ALERT 2: PRIVILEGE ESCALATION - UNUSUAL ACCOUNT ACTIVITY ===
+Alert ID: SIEM-20240320-002
+Timestamp: 2024-03-20 14:45:12 UTC
+Severity: CRITICAL
+Source: 192.168.15.45
+Event Type: Privilege Escalation Attempt
+Target Account: Domain Administrator
+Activity Details: 
+  - Token impersonation attempt detected
+  - Mimikatz signature matched in process memory
+  - LSASS.exe access by non-system process
+  - Credential dump attempt via procdump.exe
+
+Behavior:
+  - PowerShell spawned from user context (unusual)
+  - Execution of: powershell -EncodedCommand [LONG_BASE64_STRING]
+  - Base64 decoded payload: Invoke-Mimikatz to dump domain credentials
+
+Confidence Level: VERY HIGH (99%)
+Risk Score: 98/100
+
+---
+
+=== ALERT 3: LATERAL MOVEMENT DETECTED ===
+Alert ID: SIEM-20240320-003
+Timestamp: 2024-03-20 15:12:30 UTC
+Severity: HIGH
+Source: 192.168.15.45
+Targets: 
+  - 192.168.15.250 (File Server - Finance)
+  - 192.168.15.150 (Domain Controller)
+  - 192.168.15.200 (Finance Workstation)
+
+Activity:
+  - SMB enumeration of network shares (net view commands)
+  - Pass-the-Hash attack detected (NTLM relay)
+  - Lateral movement via RDP to multiple systems
+  - UNC paths accessed: \\192.168.15.250\Finance$\Invoices
+  - Unusual file access patterns (large bulk reads)
+
+Tools Used (Signature Matches):
+  - PsExec execution detected
+  - Remote service creation (SYSTEM context)
+  - Net.exe and wmic.exe commands for reconnaissance
+
+Risk Score: 92/100
+
+---
+
+=== ALERT 4: DATA EXFILTRATION - LARGE FILE TRANSFER ===
+Alert ID: SIEM-20240320-004
+Timestamp: 2024-03-20 15:18:45 UTC
+Severity: CRITICAL
+Source: 192.168.15.250 (File Server)
+Destination: 210.12.34.56 (External - GEOIP: China)
+Protocol: HTTPS with possible data obfuscation
+Data Volume: 2.3 GB transferred
+Duration: 8 minutes
+File Types Observed:
+  - .xlsx (Financial spreadsheets)
+  - .docx (Contracts, agreements)
+  - .pdf (Invoices, reports)
+  - .ppt (Presentations with sensitive data)
+
+Indicators:
+  - Data compressed before transfer (ZIP/7Z)
+  - Non-standard port usage (8443 for HTTPS)
+  - Encrypted tunnel to external C2 infrastructure
+  - Timing: Outside business hours
+  - User: admin_backup (compromised account)
+
+Risk Score: 99/100 (CRITICAL - Confirmed data breach)
+
+---
+
+=== ALERT 5: COMMAND & CONTROL COMMUNICATION ===
+Alert ID: SIEM-20240320-005
+Timestamp: 2024-03-20 14:55:22 UTC
+Severity: HIGH
+Source: 192.168.15.45
+Destination: malicious-c2.ru:443 (Resolves to 203.45.67.89)
+Protocol: HTTPS (appears encrypted)
+Activity Pattern: 
+  - Regular beaconing every 30 seconds
+  - C2 checkin requests to: /admin/listener
+  - Response payloads indicate command execution
+  - Traffic pattern matches known APT28 tools
+
+Associated Malware:
+  - Likely variant of Sofacy (APT28 main payload)
+  - MITRE ATT&CK: Command and Control (T1071)
+
+Risk Score: 95/100
+
+---
+
+=== ALERT 6: PROCESS INJECTION & CODE EXECUTION ===
+Alert ID: SIEM-20240320-006
+Timestamp: 2024-03-20 15:05:15 UTC
+Severity: HIGH
+Source: 192.168.15.45
+Event Type: Suspicious Process Tree
+Parent Process: explorer.exe (Windows shell)
+Child Process: powershell.exe
+Grandchild Process: cmd.exe (with suspicious arguments)
+
+Execution Chain:
+  explorer.exe 
+    └── powershell.exe -NoProfile -ExecutionPolicy Bypass
+        └── cmd.exe /c whoami & ipconfig & tasklist
+        └── cmd.exe /c dir C:\Users\*\Desktop
+
+Indicators of Malicious Activity:
+  - Bypassing execution policy
+  - Living-off-the-land binary usage (LOLBAS)
+  - Reconnaissance commands (whoami, ipconfig, tasklist)
+  - File enumeration
+  - Base64-encoded payloads detected
+
+MITRE ATT&CK: Execution (T1059 - Command & Scripting Interpreter)
+Risk Score: 88/100
+
+---
+
+=== ALERT 7: BRUTE FORCE ATTACK ON DOMAIN CONTROLLER ===
+Alert ID: SIEM-20240320-007
+Timestamp: 2024-03-20 14:42:00 to 2024-03-20 15:10:00 UTC (28 minutes)
+Severity: MEDIUM (but escalated due to context)
+Source: 192.168.15.45
+Target: 192.168.15.150 (Domain Controller)
+Protocol: LDAP Authentication
+Attack Type: Credential Spray / Brute Force
+
+Details:
+  - 147 failed authentication attempts
+  - 12 unique usernames targeted (including: admin, administrator, domain_admin, backup_admin)
+  - Failed attempts per user: 8-15 tries
+  - Successful login: 1 (admin_backup account)
+  - Attack speed: ~5 attempts per minute
+
+Tools/Techniques:
+  - Likely automated script
+  - MITRE ATT&CK: Credential Access (T1110.003 - Password Spraying)
+
+Risk Score: 82/100
+
+---
+
+=== ALERT 8: NETWORK RECONNAISSANCE ===
+Alert ID: SIEM-20240320-008
+Timestamp: 2024-03-20 14:36:22 UTC
+Severity: MEDIUM
+Source: 192.168.15.45
+Activity: Network Enumeration
+Commands Detected:
+  - net view (enumerate network resources)
+  - net view /domain (enumerate domain resources)
+  - nslookup (DNS queries for infrastructure mapping)
+  - Ping sweep to 192.168.15.0/24 (full subnet scan)
+
+Purpose: Threat actor mapping internal network for:
+  - Identifying high-value targets (file servers, domain controllers)
+  - Understanding network topology
+  - Locating additional systems for lateral movement
+
+MITRE ATT&CK: Discovery (T1087, T1018, T1016)
+Risk Score: 75/100
+
+---
+
+=== INCIDENT CORRELATION SUMMARY ===
+
+Timeline:
+14:32 - Suspicious RDP login from 203.45.67.89 (APT28 infrastructure)
+14:36 - Network reconnaissance begins
+14:42 - Brute force on domain controller
+14:45 - Privilege escalation (Mimikatz detected)
+14:55 - Command & Control communication established
+15:05 - Process injection and code execution
+15:12 - Lateral movement to file server
+15:18 - Data exfiltration begins (2.3 GB)
+
+Threat Actor Profile:
+- Attribution: APT28 (Sofacy) - Russian state-sponsored APT
+- Objective: Cyber espionage, data theft
+- Attack Vector: Compromised credentials or brute force
+- Capability Level: EXPERT
+
+Indicators of Compromise (IOCs):
+IPs:
+  - 203.45.67.89 (C2 server, APT28)
+  - 210.12.34.56 (Data exfil destination, China)
+
+Domains:
+  - malicious-c2.ru (APT28 C2)
+
+Files/Hashes:
+  - Mimikatz variant (credential dumper)
+  - Unknown trojan (likely SOFACY)
+
+User Accounts:
+  - admin_backup (compromised)
+
+Workstations:
+  - 192.168.15.45 (COMPROMISED - Point of entry)
+  - 192.168.15.250 (File Server - Data stolen)
+
+=== INCIDENT CLASSIFICATION ===
+
+Incident Type: Advanced Persistent Threat (APT) - State-Sponsored Cyberattack
+Classification: CRITICAL
+Confidence Level: VERY HIGH (99%)
+Overall Risk Score: 96/100
+
+Stages of Attack (Cyber Kill Chain):
+1. Initial Compromise: Weak credentials or phishing
+2. Persistence: Backdoor installation (C2 beacon)
+3. Privilege Escalation: Mimikatz credential dumping
+4. Lateral Movement: SMB enumeration and lateral movement
+5. Collection: Large-scale data gathering from file servers
+6. Exfiltration: Data stolen to external C2 infrastructure (210.12.34.56)
+
+Recommended Actions:
+1. IMMEDIATE: Isolate 192.168.15.45 from network
+2. IMMEDIATE: Reset all admin credentials
+3. Revoke domain administrator tokens
+4. Scan all systems for similar beacons
+5. Engage incident response and forensics team
+6. Notify CISO/Executive leadership
+7. Prepare for data breach notification (likely scenario)
+8. Preserve logs for forensic analysis
+
+Estimated Impact:
+- Financial data compromised: HIGH
+- Customer data exposed: POSSIBLE
+- Business continuity: THREATENED
+- Regulatory implications: SIGNIFICANT

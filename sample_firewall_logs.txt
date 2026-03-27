@@ -1,0 +1,60 @@
+Sophos XGS Firewall Logs - Incident Analysis
+Date: 2024-03-20
+Firewall: Sophos XGS 2300
+
+=== BLOCKED CONNECTIONS ===
+
+2024-03-20 14:32:15 UTC | BLOCK | Protocol: TCP | Source: 192.168.15.45 (IT Department) | Destination: 203.45.67.89:4444 | Rule: Malware_C2_Blocklist | Threat_Level: CRITICAL
+Reason: IP in known APT28 command & control infrastructure (OSINT: Recorded in various CTI feeds)
+
+2024-03-20 14:35:22 UTC | BLOCK | Protocol: HTTPS | Source: 192.168.15.108 (Marketing Dept) | Destination: malicious-c2.ru:443 | Rule: High_Risk_Domain | Threat_Level: HIGH
+DNS Query: malicious-c2.ru resolved to 203.45.67.89 (Same C2 IP)
+Certificate: Self-signed, registered to anonym.net
+
+2024-03-20 14:40:18 UTC | BLOCK | Protocol: TCP | Source: 192.168.15.45 | Destination: 210.12.34.56:8080 | Rule: Suspicious_Scan | Threat_Level: HIGH
+Activity: Sequential port scanning detected (SYN probes to ports 80, 443, 8080, 3389)
+Confidence: Automated reconnaissance
+
+2024-03-20 14:42:30 UTC | BLOCK | Protocol: UDP | Source: 192.168.15.45 | Destination: 8.8.8.8:53 | Rule: DNS_Exfil_Detection | Threat_Level: MEDIUM
+Suspicious_Activity: DNS queries for large TXT records (potential data exfiltration channel)
+Query_Pattern: base64-encoded-data.exfil-domain.com
+
+2024-03-20 15:12:03 UTC | BLOCK | Protocol: HTTPS | Source: 192.168.15.200 (Finance Dept) | Destination: suspicious-domain.com:443 | Rule: Phishing_Domain_Block | Threat_Level: CRITICAL
+Reason: Domain matches credential harvesting campaign (OSINT: similar to office365-verify.com)
+
+2024-03-20 15:15:45 UTC | BLOCK | Protocol: HTTP | Source: 192.168.15.50 (SOC Cabin) | Destination: 104.21.45.67:80 | Rule: Malware_C2 | Threat_Level: HIGH
+Associated_Domain: rat-malware-hosting.su (Hosts known remote access trojan binaries)
+
+=== ANOMALOUS INTERNAL TRAFFIC ===
+
+2024-03-20 14:45:00 UTC | ALERT | Source: 192.168.15.45 | Destination: 192.168.15.250 (Server - File Storage) | Volume: 2.3 GB transferred | Direction: Outbound | Duration: 8 minutes
+Anomaly: Outside normal business hours, unusual volume for this user
+
+2024-03-20 15:20:15 UTC | ALERT | Source: 192.168.15.108 | Destination: 192.168.15.150 (Server - Domain Controller) | Protocol: LDAP | Activity: Brute force attempt | Failed_Attempts: 47
+Detection: Multiple authentication failures within 60 seconds
+
+=== INTRUSION PREVENTION ===
+
+2024-03-20 14:33:22 UTC | IPS_BLOCK | Signature: Emotet.Downloader | Source: External | Destination: 192.168.15.98 (Workstation) | Action: Blocked & Quarantined
+Detection_Confidence: 99%
+
+2024-03-20 15:05:30 UTC | IPS_BLOCK | Signature: CVE-2021-44228 (Log4Shell) | Source: 203.45.67.89 | Destination: 192.168.15.112 | Action: Blocked
+Payload: Attempt to exploit Java logging vulnerability
+
+=== SUMMARY STATISTICS ===
+
+Total_Blocked_Connections: 10
+Critical_Threats: 2
+High_Threats: 4
+Medium_Threats: 1
+Unique_Source_IPs: 1 internal (192.168.15.45), 3 external (203.45.67.89, 210.12.34.56, 104.21.45.67)
+Affected_Users: 4 (IT Dept, Marketing Dept, Finance Dept, SOC Cabin)
+Unique_Malicious_Domains: 3
+Unique_External_IPs: 3
+Primary_Attack_Vectors: Command & Control, Credential Harvesting, Reconnaissance
+
+=== RISK ASSESSMENT ===
+
+Overall_Risk_Score: 92/100 (CRITICAL)
+Confidence_Level: HIGH
+Recommendation: Immediate incident response required - potential compromise of workstation 192.168.15.45

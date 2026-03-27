@@ -1,0 +1,241 @@
+# ⚡ QUICK START - 5 Minute Setup
+
+## 📥 You Just Downloaded:
+
+**Core Project:**
+- `threat_intel_pipeline.py` — Main production script (uses Claude API)
+- `threat_intel_pipeline_demo.py` — Demo version (no API needed, shows output)
+- `requirements.txt` — Python dependencies
+- `README.md` — Full documentation
+- `GITHUB_SETUP.md` — GitHub deployment guide
+
+**Sample Data (for testing):**
+- `sample_firewall_logs.txt` — Sophos firewall example
+- `sample_email_headers.txt` — Phishing/spoofing examples
+- `sample_siem_alerts.txt` — Real incident example
+
+**Generated Example Output:**
+- `INC-20260323072520_report.md` — Example threat intelligence report (THIS is what your reports will look like)
+
+---
+
+## 🚀 Start Here (Pick One):
+
+### Option 1: See It Work Immediately (NO API NEEDED)
+```bash
+# Install dependencies
+pip install python-dotenv
+
+# Run demo (generates example reports)
+python threat_intel_pipeline_demo.py
+
+# Check output
+cat INC-*.json  # Structured report
+cat INC-*.md    # Human-readable report
+```
+
+**Takes 30 seconds. No setup needed.**
+
+---
+
+### Option 2: Production Use (REQUIRES API KEY)
+```bash
+# 1. Get Claude API key from https://console.anthropic.com
+#    (if you don't have one, start with Option 1 above)
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Set API key
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# 4. Run pipeline with sample data
+python threat_intel_pipeline.py
+
+# 5. Check output
+cat INC-*.json
+cat INC-*.md
+```
+
+**Takes 2 minutes if you have API key.**
+
+---
+
+## 📝 Use Your Own Data
+
+Edit the `main()` function in `threat_intel_pipeline.py`:
+
+```python
+def main():
+    pipeline = ThreatIntelligencePipeline()
+    
+    # Replace these with your data
+    with open("your_firewall.log") as f:
+        firewall_logs = f.read()
+    
+    with open("your_email_headers.txt") as f:
+        email_headers = f.read()
+    
+    with open("your_siem_alerts.txt") as f:
+        siem_alerts = f.read()
+    
+    # Run pipeline
+    report = pipeline.run_pipeline(
+        firewall_logs=firewall_logs,
+        email_headers=email_headers,
+        siem_alerts=siem_alerts
+    )
+    
+    # Save reports
+    pipeline.save_report(report, format='json')
+    pipeline.save_report(report, format='md')
+```
+
+---
+
+## 🎯 What This Does
+
+**Input:**
+```
+Raw Security Data
+├── Firewall logs (Sophos: blocked connections, IPS alerts)
+├── Email headers (SPF/DKIM/DMARC failures, phishing indicators)
+└── SIEM alerts (Splunk/ELK: privilege escalation, lateral movement, data exfil)
+```
+
+**Processing:**
+```
+Claude AI Analysis
+├── Extracts IOCs (IPs, domains, hashes, emails)
+├── Correlates across sources (finds patterns = threat actors)
+├── Maps to MITRE ATT&CK framework
+├── Scores risk (0-100)
+└── Generates intelligence report
+```
+
+**Output:**
+```
+Incident Reports
+├── JSON (machine-readable, for tools/dashboards)
+└── Markdown (human-readable, for sharing/discussion)
+```
+
+---
+
+## 📊 Example Output
+
+The demo generates this kind of report:
+
+```
+CRITICAL INCIDENT: INC-20260323072520
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Risk Score: 95/100
+Threat Actor: APT28 (Sofacy - Russian state-sponsored)
+Data Compromised: Financial data (2.3 GB)
+
+Indicators of Compromise (IOCs):
+├── IPs: 203.45.67.89 (C2), 210.12.34.56 (exfil), 104.21.45.67 (phishing)
+├── Domains: malicious-c2.ru, office365-verify-real.ru
+└── Hashes: Mimikatz variant, Sofacy trojan
+
+Attack Timeline:
+├── 14:32 - Phishing emails sent
+├── 14:42 - Credentials harvested
+├── 14:45 - RDP login from APT28 infrastructure
+├── 15:12 - Privilege escalation (Mimikatz detected)
+└── 15:18 - Data exfiltration (2.3 GB stolen)
+
+MITRE ATT&CK Mapping:
+├── T1566.002 - Phishing: Spearphishing Link
+├── T1110.003 - Brute Force: Password Spraying
+├── T1134.003 - Make and Impersonate Token
+├── T1570 - Lateral Tool Transfer
+└── T1041 - Exfiltration Over C2 Channel
+
+Recommended Actions:
+1. Isolate affected workstations immediately
+2. Reset all administrative credentials
+3. Block malicious IPs/domains at perimeter
+4. Hunt for lateral movement indicators
+5. Engage incident response team
+```
+
+---
+
+## 🎓 This Is Your CTI Portfolio Piece
+
+When applying to CTI roles, you can say:
+
+> "I built a threat intelligence pipeline that ingests firewall logs, email headers, and SIEM alerts, then uses Claude AI to automatically correlate indicators of compromise across sources, map them to MITRE ATT&CK, and generate structured intelligence reports.
+> 
+> It demonstrates my understanding of: threat intelligence workflows, IOC correlation, attack chain analysis, risk assessment, and automation—exactly what CTI teams do."
+
+---
+
+## 🔗 Next Steps
+
+1. **Run the demo** (Option 1 above) - See it work
+2. **Get Claude API key** - https://console.anthropic.com
+3. **Test with sample data** - Run production version
+4. **Add your real Sophos logs** - Customize the input
+5. **Push to GitHub** - See `GITHUB_SETUP.md`
+6. **Reference in job apps** - "Check my threat intelligence pipeline on GitHub"
+
+---
+
+## ❓ Troubleshooting
+
+**"ModuleNotFoundError: No module named 'anthropic'"**
+```bash
+pip install -r requirements.txt
+# If that fails:
+pip install --break-system-packages -r requirements.txt
+```
+
+**"Could not resolve authentication method"**
+```bash
+export ANTHROPIC_API_KEY="your-api-key-here"
+# Then run again
+```
+
+**Demo version not generating reports?**
+```bash
+python threat_intel_pipeline_demo.py
+# Check /mnt/user-data/outputs/ for INC-*.json and INC-*.md files
+```
+
+---
+
+## 📚 Files Explained
+
+| File | Purpose |
+|------|---------|
+| `threat_intel_pipeline.py` | **USE THIS FOR PRODUCTION** - Real API calls to Claude |
+| `threat_intel_pipeline_demo.py` | Quick test (no API needed) |
+| `sample_*.txt` | Example data for testing |
+| `requirements.txt` | Install with: `pip install -r requirements.txt` |
+| `README.md` | Full documentation |
+| `GITHUB_SETUP.md` | Deploy to GitHub |
+
+---
+
+## 🎯 Your CTI Goal
+
+✅ You now have a **working threat intelligence automation tool**  
+✅ **Bridges SOC work** (log analysis, alert triage) → **CTI role** (threat actor profiling, IOC correlation)  
+✅ **Production-ready code** for your GitHub portfolio  
+✅ **Interview-ready talking point** about automation + threat intelligence  
+
+---
+
+**Ready? Start with:**
+```bash
+python threat_intel_pipeline_demo.py
+```
+
+Then read `README.md` for full details.
+
+**Questions?** Check `GITHUB_SETUP.md` for deployment, or `README.md` for architecture deep-dive.
+
+Good luck! 🚀
